@@ -28,6 +28,7 @@ void createListKamar(ListKamar &L);
 adrKamar alokasiKamar(int nomor, string tipe, double harga);
 void insertKamar(ListKamar &L, adrKamar P); // Menggunakan metode Insert Last
 adrKamar cariKamar(ListKamar L, int nomor);
+adrKamar lepasKamar(ListKamar &L, int nomor);
 void tampilKamar(ListKamar L);
 
 #endif

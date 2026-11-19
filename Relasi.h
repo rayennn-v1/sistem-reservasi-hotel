@@ -31,7 +31,14 @@ void createListRelasi(ListRelasi &L);
 adrRelasi alokasiRelasi(adrTamu P, adrKamar C, string tanggal, int durasi);
 void insertAfterRelasi(ListRelasi &L, adrRelasi Prec, adrRelasi R); // Metode Insert After
 void buatReservasi(ListRelasi &L, adrTamu P, adrKamar C, string tanggal, int durasi);
+bool tanggalISOValid(string tanggal);
+bool kamarTersedia(ListRelasi L, adrKamar C, string tanggalCheckIn, int durasi);
 adrRelasi cariRelasi(ListRelasi L, adrTamu P, adrKamar C);
+bool batalkanReservasi(ListRelasi &L, adrTamu P, adrKamar C);
+int hapusReservasiTamu(ListRelasi &L, adrTamu P);
+int hapusReservasiKamar(ListRelasi &L, adrKamar C);
 void tampilSemuaReservasi(ListTamu LT, ListRelasi LR);
+int hitungReservasiTamu(ListRelasi LR, adrTamu P);
+void statistikReservasi(ListTamu LT, ListRelasi LR);
 
 #endif
