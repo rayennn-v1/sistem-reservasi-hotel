@@ -15,7 +15,7 @@ adrKamar alokasiKamar(int nomor, string tipe, double harga) {
     return P;
 }
 
-// Menambahkan Kamar baru di AKHIR list (Insert Last sesuai spesifikasi proposal)
+// Menambahkan Kamar baru di AKHIR list.
 void insertKamar(ListKamar &L, adrKamar P) {
     if (L.firstChild == nullptr) {
         L.firstChild = P; // Jika list kosong, P menjadi elemen pertama
@@ -39,6 +39,21 @@ adrKamar cariKamar(ListKamar L, int nomor) {
         P = P->next;
     }
     return nullptr; // Mengembalikan nullptr jika tidak ditemukan
+}
+
+adrKamar lepasKamar(ListKamar &L, int nomor) {
+    adrKamar sebelumnya = nullptr;
+    adrKamar sekarang = L.firstChild;
+    while (sekarang != nullptr && sekarang->nomorKamar != nomor) {
+        sebelumnya = sekarang;
+        sekarang = sekarang->next;
+    }
+    if (sekarang == nullptr) return nullptr;
+
+    if (sebelumnya == nullptr) L.firstChild = sekarang->next;
+    else sebelumnya->next = sekarang->next;
+    sekarang->next = nullptr;
+    return sekarang;
 }
 
 // Menampilkan seluruh daftar Kamar di List Child

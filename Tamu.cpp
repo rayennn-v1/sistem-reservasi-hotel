@@ -37,6 +37,23 @@ adrTamu cariTamu(ListTamu L, string id) {
     return nullptr; // Mengembalikan nullptr jika tidak ditemukan
 }
 
+// Menghapus satu tamu dari list berdasarkan ID.
+bool hapusTamu(ListTamu &L, string id) {
+    adrTamu sebelumnya = nullptr;
+    adrTamu sekarang = L.firstParent;
+    while (sekarang != nullptr && sekarang->idTamu != id) {
+        sebelumnya = sekarang;
+        sekarang = sekarang->next;
+    }
+    if (sekarang == nullptr) return false;
+
+    if (sebelumnya == nullptr) L.firstParent = sekarang->next;
+    else sebelumnya->next = sekarang->next;
+
+    delete sekarang;
+    return true;
+}
+
 // Menampilkan seluruh daftar Tamu yang ada di List Parent
 void tampilTamu(ListTamu L) {
     if (L.firstParent == nullptr) {

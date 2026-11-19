@@ -28,6 +28,7 @@ void createListTamu(ListTamu &L);
 adrTamu alokasiTamu(string id, string nama, string noTelp);
 void insertTamu(ListTamu &L, adrTamu P); // Menggunakan metode Insert First
 adrTamu cariTamu(ListTamu L, string id);
+bool hapusTamu(ListTamu &L, string id);
 void tampilTamu(ListTamu L);
 
 #endif
